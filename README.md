@@ -24,3 +24,4 @@ Things you may want to cover:
 * ...
 # rails_lesson
 # rails_lesson
+# rails_lesson
