@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 
+  namespace :admin do
+    resources :items, only: [:new,:create]
+
+  end
+
   scope module: :public do
     get "/about" => "homes#about", as: "about"
     root to: "homes#top"
