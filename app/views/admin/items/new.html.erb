@@ -1,7 +1,8 @@
 <h1>商品新規登録</h1>
 
 <%= form_with model: @item, url:admin_items_path do |f| %>
-
+<%= f.label :item_image , "商品画像" %>
+<%= f.file_field :item_image%>
 <br>
 <br>
   <%= f.label :name, "商品名" %>
@@ -12,5 +13,11 @@
   <%= f.text_field :introduction, placeholder: "商品の説明を書く" %>
 <br>
 <br>
+  <%= f.label :genre_id, "ジャンル", class: "col-sm-3" %>
+  <%= f.collection_select :genre_id, @genres, :id, :name, {include_blank: "--選択してください--"} %>
+<br>
+<br>
+ <%= f.label :price, "税抜価格" %>
+ <%= f.text_field :price, placeholder: "1000" %>
   <%=f.submit "新規登録" %>
 <%end%>
