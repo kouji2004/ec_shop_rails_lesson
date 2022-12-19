@@ -9,6 +9,10 @@ class Admin::ItemsController < ApplicationController
     @itemes = Item.all
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
 
   def create
     @item = Item.new(iteme_params)
