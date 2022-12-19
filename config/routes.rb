@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
+    resources :items ,only: [:index,:show]
     get "/about" => "homes#about", as: "about"
     root to: "homes#top"
   end
