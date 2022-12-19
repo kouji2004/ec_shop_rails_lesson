@@ -5,6 +5,11 @@ class Admin::ItemsController < ApplicationController
     @genres = Genre.all
   end
 
+  def index
+    @itemes = Item.all
+  end
+
+
   def create
     @item = Item.new(iteme_params)
     @item.save
