@@ -1,4 +1,12 @@
 <h1>商品の詳細ページ</h1>
+
+<h2>商品の名前</h2>
 <%=@item.name %>
+<h2>商品の値段</h2>
 <%=@item.price %>
+<h2>商品画像</h2>
 <%= image_tag @item.get_item_image(150,150) %>
+
+<br>
+<br>
+<%=link_to "編集する", edit_admin_item_path %>

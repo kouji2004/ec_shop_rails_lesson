@@ -1,0 +1,25 @@
+<h1>商品編集ページ</h1>
+<%= form_with model: @item, url:admin_item_path(@item), method: :patch do |f| %>
+
+  <%= f.label :item_image, "商品画像", class: "col-sm-3" %>
+  <%= f.file_field :item_image, accept: 'image/*' %>
+<br>
+<br>
+  <%= f.label :name, "商品名" %>
+  <%= f.text_field :name %>
+<br>
+<br>
+  <%= f.label :introduction, "商品説明"%>
+  <%= f.text_area :introduction, placeholder: "ここに説明文を記述します" %>
+<br>
+<br>
+  <%= f.label :genre_id, "ジャンル"%>
+  <%= f.collection_select :genre_id, @genres, :id, :name, {include_blank: "--選択してください--"}%>
+<br>
+<br>
+ <%= f.label :price, "税抜価格"%>
+  <%= f.text_field :price, placeholder: "1000" %> 円
+<br>
+<br>
+  <%= f.submit "変更" %>
+<% end %>

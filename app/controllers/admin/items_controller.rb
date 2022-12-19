@@ -13,6 +13,16 @@ class Admin::ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def edit
+    @item = Item.find(params[:id])
+    @genres = Genre.all
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(iteme_params)
+    redirect_to root_path
+  end
 
   def create
     @item = Item.new(iteme_params)
