@@ -22,11 +22,10 @@
 <br>
 <br>
 <%= f.label :is_active, "販売ステータス" %>
-<%= f.radio_button :is_active, :true%>
-<br>
-<br>
-<%= f.label :is_active, "販売中", value: :true %>
+<%= f.radio_button :is_active, :true %>
+<%= f.label :is_active, "販売中", value: :true%>
 <%= f.radio_button :is_active, :false %>
+<%= f.label :is_active, "販売停止中", value: :false %>
 <br>
 <br>
   <%=f.submit "新規登録" %>

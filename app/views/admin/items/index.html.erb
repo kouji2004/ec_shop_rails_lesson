@@ -1,10 +1,8 @@
 <h1>全ての商品一覧</h1>
 <% @itemes.each do |item| %>
- <% if customer_signed_in? %>
      <%= link_to admin_item_path(item.id) do %>
      <%= image_tag item.get_item_image(150,150) %>
     <% end %>
-  <%end%>
     <%= item.name %><br>
     <%= item.price %>
 <%end%>

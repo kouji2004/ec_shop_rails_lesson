@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   scope module: :public do
     resources :items ,only: [:index,:show]
+      resources :cart_items ,only: [:index] do
+
+      end
     get "/about" => "homes#about", as: "about"
     root to: "homes#top"
   end

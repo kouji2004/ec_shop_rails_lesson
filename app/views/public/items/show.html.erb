@@ -6,4 +6,11 @@
 <br>
 <%= @item.introduction %>
 
-
+  <% if @item.is_active == TRUE %>
+   <%= form_with model: @cart_item, url:cart_items_path, method: :post, local: true do |f| %>
+     <%= f.hidden_field :item_id, :value => @item.id%>
+     <%= f.hidden_field :customer_id, :value => current_customer.id %>
+     <%= f.select :item_count, *[1..10], placeholder: "個数を選択" %>
+     <%= f.submit "カートに入れる" %>
+     <%end%>
+  <%end%>
