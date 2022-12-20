@@ -4,7 +4,7 @@
 <p>数量</p>
 <p>小計</p>
 
-  <% @crat_items.each do |crat_item| %>
+  <% @cart_items.each do |crat_item| %>
     <%= image_tag cart_item.item.get_item_image(30,30) %>
     <p>商品名</p>
     <%= crat_item.item.name %>
