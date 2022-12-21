@@ -1,1 +1,11 @@
 <h1>注文情報確認</h1>
+
+
+     <% @total = 0 %>
+     <% @cart_items.each do |cart| %>
+         <% @total += cart.item.price*cart.item_count %>
+     <% end %>
+
+  <%=@total %>
+
+<p>購入確定</p>
