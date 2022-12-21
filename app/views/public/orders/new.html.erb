@@ -6,5 +6,7 @@
 
    <%= f.radio_button :payment_methods, Order.payment_methods.key(1) %>
   <%= f.label :payment_methods, "銀行振り込み" %>
+
+  <%= f.submit "確認画面へ進む"%>
 <%end%>
 
