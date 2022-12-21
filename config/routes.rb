@@ -25,7 +25,8 @@ Rails.application.routes.draw do
           delete 'all_destroy'
         end
       end
-    resources :orders, only: [:log,:new]
+    post "/orders/log"=> "orders#log",as:"log"
+    resources :orders, only: [:new]
     get "/about" => "homes#about", as: "about"
     root to: "homes#top"
   end

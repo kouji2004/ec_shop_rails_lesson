@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_one_attached :item_image
   has_many :cart_items
 
+
   def get_item_image(width, height)
     unless item_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
