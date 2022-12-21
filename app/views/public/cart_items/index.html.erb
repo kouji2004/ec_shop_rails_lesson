@@ -4,10 +4,10 @@
 <p>数量</p>
 <p>小計</p>
 
-  <% @cart_items.each do |crat_item| %>
+  <% @cart_items.each do |cart_item| %>
     <%= image_tag cart_item.item.get_item_image(30,30) %>
     <p>商品名</p>
-    <%= crat_item.item.name %>
+    <%= cart_item.item.name %>
     <p>単価</p>
     <%= ((cart_item.item.price*1.1).to_i).to_s(:delimited) %>
   <% end %>
